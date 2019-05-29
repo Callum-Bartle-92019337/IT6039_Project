@@ -21,6 +21,7 @@ public class BoxTest {
     @Test
     public void testOne() {
         assertEquals(true, true);
+        assertEquals(false, false);
     }
 
     @Test
