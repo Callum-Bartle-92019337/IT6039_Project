@@ -5,21 +5,19 @@
  */
 package packer;
 
-
-import org.junit.Before;
-import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  *
  * @author bunta
  */
 public class DepotTest {
-    
+
     // Test data
-    Coordinates testCoordinates1 = new Coordinates(0,0);
-    Coordinates testCoordinates2 = new Coordinates(30,40);
+    Coordinates testCoordinates1 = new Coordinates(0, 0);
+    Coordinates testCoordinates2 = new Coordinates(30, 40);
     Coordinates testCoordinates3 = new Coordinates(1000, 2000);
     Address testAddress1 = new Address("1 First St", "Aplace", "Citadel City", "A111", testCoordinates1);
     Address testAddress2 = new Address("123 Count St", "Brooklyn", "Welling Town", "B222", testCoordinates2);
@@ -32,13 +30,14 @@ public class DepotTest {
     public static void setUpClass() {
         System.out.println("Testing Depot class...");
     }
-    
+
     /**
      * Test of getName method, of class Depot.
      */
     @Test
     public void testGetName() {
         System.out.println("toString");
+        System.out.println(testDepot1.getName());
         assertEquals("City Depot", testDepot1.getName());
         assertEquals("Suburbs Depot", testDepot2.getName());
         assertEquals("Country Depot", testDepot3.getName());
@@ -54,5 +53,5 @@ public class DepotTest {
         assertEquals(testCoordinates2, testDepot2.getCoordinates());
         assertEquals(testCoordinates3, testDepot3.getCoordinates());
     }
-    
+
 }

@@ -14,17 +14,16 @@ public class Packer {
         Box b = null;
         while (!m.isEmpty()) { // repeat until all items are packed
             if (b == null) {
-                b = new Box(d,c);
+                b = new Box(c, d);
             }
             Product prodToAdd = m.getHeaviestUnder(b.remainingCapacity());
             if (prodToAdd == null) {
                 packedBoxes.add(b);
                 b = null;
-            }
-            else {
+            } else {
                 b.addProduct(prodToAdd);
                 m.removeProduct(prodToAdd);
-            }  
+            }
         }
         if (b != null) {
             packedBoxes.add(b);
@@ -32,5 +31,5 @@ public class Packer {
         }
         return packedBoxes;
     }
-    
+
 }
