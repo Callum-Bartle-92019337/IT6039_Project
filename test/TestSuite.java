@@ -28,8 +28,8 @@ import packer.ProductTest;
     ProductTest.class,
     CustomerTest.class,
     ManifestTest.class,
-    BoxTest.class,
-    PackerTest.class
+    PackerTest.class,
+    BoxTest.class
 })
 
 public class TestSuite {
