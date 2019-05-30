@@ -9,11 +9,13 @@ public class Box {
     private Manifest contents;
     private Customer customer;
     private Depot depot;
+    private float capacity;
 
     public Box(Customer customer, Depot depot) {
         this.customer = customer;
         this.depot = depot;
         contents = new Manifest();
+        capacity = 20;
     }
 
     public void addProduct(Product product) {
@@ -47,20 +49,24 @@ public class Box {
         return getLabel();
     }
 
+    public boolean isEmpty() {
+        return contents.isEmpty();
+    }
+
     public double getWeight() {
         return contents.getTotalWeight();
     }
 
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        return p.getWeight() <= remainingCapacity();
     }
 
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) <= remainingCapacity();
     }
 
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        return capacity - this.getWeight();
     }
 
     public boolean isFragile() {
@@ -68,6 +74,10 @@ public class Box {
     }
 
     public boolean isHazardous() {
-        return false;
+        return contents.hasHazardousItems();
+    }
+
+    public boolean isHeavy() {
+        return this.getWeight() > 15;
     }
 }
