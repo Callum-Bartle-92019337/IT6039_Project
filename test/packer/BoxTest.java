@@ -6,7 +6,7 @@ import org.junit.Test;
 
 /**
  *
- * @author Callum Bartle CPP 92019337
+ * @author Callum Bartle CPP 92019337.
  */
 public class BoxTest {
 
@@ -19,7 +19,7 @@ public class BoxTest {
     Product p3 = new Product("Product3", 20, false, false);
 
     Product pA = new Product("ProductA", 5, true, false);
-    Product pB = new Product("ProductB", 10, true, true);
+    Product pB = new Product("ProductB", 10, false, true);
     Product pC = new Product("ProductC", 15, false, true);
     Product pD = new Product("ProductD", 40, true, false);
 
@@ -69,10 +69,21 @@ public class BoxTest {
 
         assertEquals(expectedLable + "\n\n", box0.getLabel());
 
-        box0.addProduct(p0);
-        expectedLable += "\n" + p0.getName() + " x 1\n" + "FRAGILE";
+        box0.addProduct(pB);
+        String expectedLable1
+                = expectedLable + "\n"
+                + pB.getName() + " x 1\n"
+                + "FRAGILE";
 
-        assertEquals(expectedLable + "\n", box0.getLabel());
+        assertEquals(expectedLable1 + "\n", box0.getLabel());
+
+        box0.addProduct(pB);
+        String expectedLable2
+                = expectedLable + "\n"
+                + pB.getName() + " x 2\n"
+                + "FRAGILE\n"
+                + "HEAVY";
+        assertEquals(expectedLable2 + "\n", box0.getLabel());
     }
 
     /**
@@ -150,6 +161,20 @@ public class BoxTest {
         box0.addProduct(p1, 10);
 
         assertEquals(true, box0.isHazardous());
+    }
+
+    /**
+     * Test of isHeavy method, of class Box.
+     */
+    @Test
+    public void testIsHeavy() {
+
+        assertEquals(false, box0.isHeavy());
+
+        box0.addProduct(p0);
+        box0.addProduct(p1, 10);
+
+        assertEquals(true, box0.isHeavy());
     }
 
 }

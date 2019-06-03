@@ -33,6 +33,9 @@ public class ManifestTest {
         System.out.println("Testing Manifest class...");
     }
 
+    /**
+     * Test of isEmptyTest method, of class Manifest.
+     */
     @Test
     public void isEmptyTest() {
         System.out.println("Is empty");
@@ -45,6 +48,9 @@ public class ManifestTest {
         assertEquals(false, m0.isEmpty());
     }
 
+    /**
+     * Test of addProductTest method, of class Manifest.
+     */
     @Test
     public void addProductTest() {
         System.out.println("add Product");
@@ -57,6 +63,9 @@ public class ManifestTest {
         assertEquals(false, m0.isEmpty());
     }
 
+    /**
+     * Test of removeProductTest method, of class Manifest.
+     */
     @Test
     public void removeProductTest() {
         System.out.println("remove Product");
@@ -68,6 +77,9 @@ public class ManifestTest {
         assertEquals(true, m0.isEmpty());
     }
 
+    /**
+     * Test of getTotalWeightTest method, of class Manifest.
+     */
     @Test
     public void getTotalWeightTest() {
         System.out.println("Get Total Weight");
@@ -80,6 +92,9 @@ public class ManifestTest {
         assertEquals(20, m0.getTotalWeight(), 0);
     }
 
+    /**
+     * Test of getHeaviestUnderTest method, of class Manifest.
+     */
     @Test
     public void getHeaviestUnderTest() {
         System.out.println("Get heaviest Under");
@@ -92,6 +107,9 @@ public class ManifestTest {
         assertEquals(p1, m0.getHeaviestUnder(5));
     }
 
+    /**
+     * Test of containsProductTest method, of class Manifest.
+     */
     @Test
     public void containsProductTest() {
         System.out.println("Contains product");
@@ -104,6 +122,9 @@ public class ManifestTest {
         assertEquals(true, m0.containsProduct(p0));
     }
 
+    /**
+     * Test of hasFragileItemsTest method, of class Manifest.
+     */
     @Test
     public void hasFragileItemsTest() {
         System.out.println("has Fragile Items");
@@ -117,6 +138,9 @@ public class ManifestTest {
         assertEquals(true, m0.hasFragileItems());
     }
 
+    /**
+     * Test of hasHazardousItemsTest method, of class Manifest.
+     */
     @Test
     public void hasHazardousItemsTest() {
         System.out.println("has Hazardous Items");
